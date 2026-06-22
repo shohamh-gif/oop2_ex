@@ -43,7 +43,7 @@ public class Main {
 
     public static String topStudentsByCredits(List<Student> students) {
         return students.stream()
-                .max(Comparator.comparingInt(Student::countOfCredits))
+                .max(Student::compareTo)
                 .map(Student::getName)
                 .orElse(null);
     }

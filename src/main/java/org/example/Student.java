@@ -44,12 +44,6 @@ public class Student implements Comparable<Student> {
 
     @Override
     public int compareTo(Student other) {
-        if (this.countOfCredits() > other.countOfCredits()) {
-            return 1;
-        } else if (this.countOfCredits() < other.countOfCredits()) {
-            return -1;
-        } else {
-            return 0;
-        }
+        return this.countOfCredits() - other.countOfCredits();
     }
 }
