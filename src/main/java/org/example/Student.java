@@ -27,6 +27,12 @@ public class Student implements Comparable<Student> {
         this.courses = courses;
     }
 
+    public List<Course> getCoursesFromYear(int fromYear) {
+        return this.courses.stream()
+                .filter(course -> course.isYearBigger(fromYear))
+                .toList();
+    }
+
     public int countOfCredits() {
         if (this.courses == null || this.courses.size() <= 0) {
             return 0;

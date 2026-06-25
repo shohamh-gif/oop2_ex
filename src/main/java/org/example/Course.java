@@ -1,7 +1,5 @@
 package org.example;
 
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class Course {
     private String title;
@@ -51,6 +49,10 @@ public class Course {
 
     public void setDepartment(Department department) {
         this.department = department;
+    }
+
+    public boolean isYearBigger(int fromYear) {
+        return this.year >= fromYear;
     }
 
 }

@@ -1,8 +1,8 @@
 package org.example;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -48,7 +48,11 @@ public class Main {
                 .orElse(null);
     }
 
-//    public static Map<String, List<String>> courseTitlesByDepartmentForYear(List<Student> students, int fromYear) {
-//        return null;
-//    }
+    public static Map<String, List<String>> courseTitlesByDepartmentForYear(List<Student> students, int fromYear) {
+        return students.stream()
+                .map(student -> student.getCoursesFromYear(fromYear))
+
+
+
+    }
 }
