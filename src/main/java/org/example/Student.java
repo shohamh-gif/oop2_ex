@@ -35,6 +35,7 @@ public class Student implements Comparable<Student> {
 
     public int countOfCredits() {
         if (this.courses == null || this.courses.isEmpty()) {
+
             return 0;
         }
         return this.courses
