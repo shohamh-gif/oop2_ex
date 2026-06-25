@@ -51,6 +51,10 @@ public class Course {
         this.department = department;
     }
 
+    public String getDepartmentName() {
+        return this.department.getName();
+    }
+
     public boolean isYearBigger(int fromYear) {
         return this.year >= fromYear;
     }

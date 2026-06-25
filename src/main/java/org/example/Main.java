@@ -50,9 +50,8 @@ public class Main {
 
     public static Map<String, List<String>> courseTitlesByDepartmentForYear(List<Student> students, int fromYear) {
         return students.stream()
-                .map(student -> student.getCoursesFromYear(fromYear))
-
-
-
+                .flatMap(student -> student.getCoursesFromYear(fromYear).stream())
+                .distinct()
+                .collect(Collectors.groupingBy(Course::getDepartmentName, Collectors.mapping(Course::getTitle, Collectors.toList())));
     }
 }
