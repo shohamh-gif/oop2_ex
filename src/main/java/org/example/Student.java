@@ -41,6 +41,9 @@ public class Student implements Comparable<Student> {
         return this.courses
                 .stream()
                 .mapToInt(Course::getCredits)
+
+
+
                 .sum();
     }
 
