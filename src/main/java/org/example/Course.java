@@ -61,22 +61,14 @@ public class Course {
 
     @Override
     public boolean equals(Object o) {
-        // 1. בדיקה אם זה אותו אובייקט בדיוק בזיכרון
         if (this == o) return true;
-
-        // 2. בדיקה אם האובייקט השני הוא null או מחלקה אחרת
         if (o == null || getClass() != o.getClass()) return false;
-
-        // 3. המרה של האובייקט השני ל-Course כדי שנוכל לגשת לשדות שלו
         Course course = (Course) o;
-
-        // 4. השוואה לפי השם (אפשר להוסיף כאן עוד שדות אם רוצים)
         return this.title.equals(course.title);
     }
 
     @Override
     public int hashCode() {
-        // מחזיר מספר שמבוסס על השם (צריך להיות עקבי עם ה-equals)
         return this.title.hashCode();
     }
 }
